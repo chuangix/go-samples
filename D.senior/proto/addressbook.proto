@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = "/";
+
+package addressbook;
+
+message Person {
+  optional string name = 1;
+  optional int32 email = 2;
+  enum PhoneType {
+    MOBILE = 0;
+    HOME = 1;
+  }
+  message PhoneNumber {
+    optional string number = 1;
+    optional PhoneType type = 2;
+  }
+  repeated PhoneNumber phones = 4;
+}
