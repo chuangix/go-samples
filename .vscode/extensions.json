@@ -1,5 +1,6 @@
 {
   "recommendations": [
+    "amazonwebservices.aws-toolkit-vscode",
     "esbenp.prettier-vscode",
     "formulahendry.code-runner",
     "golang.go",
