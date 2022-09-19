@@ -19,11 +19,9 @@ func main() {
 		log.Fatalf("unable to load SDK config, %v", err)
 	}
 
-	// Using the Config value, create the DynamoDB client
-	svc := dynamodb.NewFromConfig(cfg)
+	client := dynamodb.NewFromConfig(cfg)
 
-	// Build the request with its input parameters
-	resp, err := svc.ListTables(context.TODO(), &dynamodb.ListTablesInput{
+	resp, err := client.ListTables(context.TODO(), &dynamodb.ListTablesInput{
 		Limit: aws.Int32(5),
 	})
 	if err != nil {
